@@ -3,14 +3,9 @@ import java.util.Arrays;
 public class Backtracking {
 	static Tablero result;
 
-	public boolean canPlace(int x2, int y2) {
-		// This function will check if queen can be placed (x2,y2), or we can
-		// say that Can queen at x2 row is placed at y2 column.
-		// for finding the column for x2 row, we will check all the columns for
-		// all the rows till x2-1.
+		public boolean canPlace(int x2, int y2) {
+
 		for (int i = 0; i < x2; i++) {
-			//result[i] == y2 => columns are same
-			//|i - x2| == |result[i] - y2| => in diagonals.
 			if ((result.reinas[i] == y2)
 					|| (Math.abs(i - x2) == Math.abs(result.reinas[i] - y2))) {
 				return false;
